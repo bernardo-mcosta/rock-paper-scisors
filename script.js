@@ -18,7 +18,7 @@ function getPlayerChoice(){
 let playerChoice = 'ROCK'
 let computerChoice = 'PAPER'
 
-function playGame(playerChoice,computerChoice){
+function playRound(playerChoice,computerChoice){
     console.log (`You chose ${playerChoice} and the computer chose ${computerChoice}.` )
     if (playerChoice == 'ROCK' && computerChoice == 'SCISSORS'){
         console.log('You win!')
@@ -49,8 +49,10 @@ function playGame(playerChoice,computerChoice){
         return 'draw'
     }
 }
+
+
    
-playGame(playerChoice,computerChoice)
+playRound(playerChoice,computerChoice)
 /* 
     ROCK - PAPER
     ROCK - SCISSORS
