@@ -15,7 +15,7 @@ function getPlayerChoice(){
 //let playerChoice = getPlayerChoice()
 //let computerChoice = getComputerChoice()
 
-let playerChoice = 'PAPER'
+let playerChoice = 'SCISSORS'
 let computerChoice = 'PAPER'
 
 function playRound(playerChoice,computerChoice){
@@ -42,8 +42,8 @@ function game(){
     let playerScore = 0
     let computerScore = 0
     for (let i = 0; i < 5; i++){
+        console.log(`Starting round ${i+1}...`)
         let result = playRound(playerChoice,computerChoice)
-        console.log(result)
         if (result == 'win'){
             playerScore++
         } else if (result =='lose'){
@@ -55,18 +55,17 @@ function game(){
     }
     console.log(computerScore)
     console.log(playerScore)
+    showWinner(playerScore,computerScore)
 }
 
 game()
 
-/* 
-    ROCK - PAPER
-    ROCK - SCISSORS
-    ROCK - ROCK
-    PAPER - ROCK
-    PAPER - SCISSORS
-    PAPER - PAPER
-    SCISSORS - PAPER
-    SCISSORS - ROCK
-    SCISSORS - SCISSORS
-    */
+
+function showWinner(playerScore,computerScore){
+    if (playerScore > computerScore){
+        console.log('You won the game!')
+    } else if (playerScore < computerScore){
+        console.log('You lost the game!')
+    } else 
+        console.log('It\'s a tie!')
+}
