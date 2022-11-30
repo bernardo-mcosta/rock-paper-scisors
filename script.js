@@ -15,13 +15,13 @@ function getPlayerChoice(){
 //let playerChoice = getPlayerChoice()
 //let computerChoice = getComputerChoice()
 
-let playerChoice = 'ROCK'
+let playerChoice = 'PAPER'
 let computerChoice = 'PAPER'
 
 function playRound(playerChoice,computerChoice){
     console.log (`You chose ${playerChoice} and the computer chose ${computerChoice}.` )
     if (playerChoice == computerChoice){
-        return draw
+        return 'draw'
     } else if (playerChoice == 'ROCK' && computerChoice == 'SCISSORS'){
         return 'win'
     } else if (playerChoice == 'ROCK' && computerChoice == 'PAPER'){
@@ -41,12 +41,12 @@ function playRound(playerChoice,computerChoice){
 function game(){
     let playerScore = 0
     let computerScore = 0
-    for (i = 0, i < 5, i++){
+    for (let i = 0; i < 5; i++){
         let result = playRound(playerChoice,computerChoice)
-        if (result = 'win'){
+        console.log(result)
+        if (result == 'win'){
             playerScore++
-            console.log('You win!')
-        } else if (result ='lose'){
+        } else if (result =='lose'){
             computerScore++
             console.log('You lose!')
         } else {
