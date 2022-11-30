@@ -20,39 +20,45 @@ let computerChoice = 'PAPER'
 
 function playRound(playerChoice,computerChoice){
     console.log (`You chose ${playerChoice} and the computer chose ${computerChoice}.` )
-    if (playerChoice == 'ROCK' && computerChoice == 'SCISSORS'){
-        console.log('You win!')
+    if (playerChoice == computerChoice){
+        return draw
+    } else if (playerChoice == 'ROCK' && computerChoice == 'SCISSORS'){
         return 'win'
     } else if (playerChoice == 'ROCK' && computerChoice == 'PAPER'){
-        console.log('You lose!')
         return 'lose'
-    } else if (playerChoice == 'ROCK' && computerChoice == 'ROCK'){
-        console.log("It's a draw!")
-        return 'draw'
     } else if (playerChoice == 'PAPER' && computerChoice == 'ROCK'){
-        console.log('You win!')
         return 'win'
     } else if (playerChoice == 'PAPER' && computerChoice == 'SCISSORS'){
-        console.log('You lose!')
         return 'lose'
-    } else if (playerChoice == 'PAPER' && computerChoice == 'PAPER'){
-        console.log("It's a draw!")
-        return 'draw'
     } else if (playerChoice == 'SCISSORS' && computerChoice == 'PAPER'){
-        console.log('You win!')
         return 'win'
     } else if (playerChoice == 'SCISSORS' && computerChoice == 'ROCK'){
-        console.log('You lose!')
         return 'lose'
-    } else if (playerChoice == 'SCISSORS' && computerChoice == 'SCISSORS'){
-        console.log("It's a draw!")
-        return 'draw'
     }
 }
+//playRound(playerChoice,computerChoice)
 
+function game(){
+    let playerScore = 0
+    let computerScore = 0
+    for (i = 0, i < 5, i++){
+        let result = playRound(playerChoice,computerChoice)
+        if (result = 'win'){
+            playerScore++
+            console.log('You win!')
+        } else if (result ='lose'){
+            computerScore++
+            console.log('You lose!')
+        } else {
+            console.log("It's a draw!")
+        }
+    }
+    console.log(computerScore)
+    console.log(playerScore)
+}
 
-   
-playRound(playerChoice,computerChoice)
+game()
+
 /* 
     ROCK - PAPER
     ROCK - SCISSORS
